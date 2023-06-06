@@ -22,5 +22,9 @@ connection.once('open', ()=>{
     console.log("MongoDB database connection is established.");
 });
 
-app.use('/.netlify/Backend/', HealthRouter);
+app.use('/.netlify/Backend/server', HealthRouter);
+
+app.listen(port, ()=> {
+    console.log(`Server is running in port: ${port}`);
+})
 
